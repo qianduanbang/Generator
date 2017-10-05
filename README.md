@@ -9,25 +9,25 @@
 		  	url: xxx,
 		  	dataType: 'json',
 		  	success(data1){
-		    	$.ajax({
-		      		url: xxx,
-		      		dataType: 'json',
-		      		success(data2){
-		        		$.ajax({
-		          			url: xxx,
-			          		dataType: 'json',
-			          		success(data3){
-			          			//完事儿
-			          		},
-			          		error(){
-			          			alert('错了');
-			          		}
-		        		});
-		      		},
-		      		error(){
-		        		alert('错了');
-		      		}
-		    	});
+				$.ajax({
+					url: xxx,
+					dataType: 'json',
+					success(data2){
+						$.ajax({
+				  			url: xxx,
+				      		dataType: 'json',
+				      		success(data3){
+				      			//完事儿
+				      		},
+				      		error(){
+				      			alert('错了');
+				      		}
+						});
+					},
+					error(){
+						alert('错了');
+					}
+				});
 		  	},
 		  	error(){
 		  		alert('错了');
@@ -92,25 +92,25 @@
 		  	let userData=results[0];
 			
 		  	if(userData.type=='VIP'){
-		    	Promise.all([
-	      			$.ajax({url: 'getVIPItems', dataType: 'json'})
-		    	]).then(results=>{
-		      		let items=results[0];
+				Promise.all([
+					$.ajax({url: 'getVIPItems', dataType: 'json'})
+				]).then(results=>{
+					let items=results[0];
 					
-		      		//生成列表、显示...
-		    	}, err=>{
-		      		alert('错了');
-		    	});
+					//生成列表、显示...
+				}, err=>{
+					alert('错了');
+				});
 		  	}else{
-		    	Promise.all([
-		      		$.ajax({url: 'getItems', dataType: 'json'})
-		    	]).then(results=>{
-		      		let items=results[0];
+				Promise.all([
+					$.ajax({url: 'getItems', dataType: 'json'})
+				]).then(results=>{
+					let items=results[0];
 					
-		      		//生成列表、显示...
-		    	}, err=>{
-		      		alert('错了');
-		    	});
+					//生成列表、显示...
+				}, err=>{
+					alert('错了');
+				});
 		  	}
 		}, err=>{
 		  	alert('失败');
