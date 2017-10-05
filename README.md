@@ -30,7 +30,7 @@
 		    	});
 		  	},
 		  	error(){
-		    	alert('错了');
+		  		alert('错了');
 		  	}
 		});
 ```
@@ -66,17 +66,17 @@
 ```
 		$.ajax({url: 'getUserData', dataType: 'json', success(userData){
 		  	if(userData.type=='VIP'){
-		    	$.ajax({url: 'getVIPItems', dataType: 'json', success(items){
-		      		//生成列表、显示...
-		    	}, error(err){
-		      		alert('错了');
-		    	}});
+				$.ajax({url: 'getVIPItems', dataType: 'json', success(items){
+					//生成列表、显示...
+				}, error(err){
+					alert('错了');
+				}});
 		  	}else{
-		    	$.ajax({url: 'getItems', dataType: 'json', success(items){
-		      		//生成列表、显示...
-		    	}, error(err){
-		      		alert('错了');
-		    	}});
+				$.ajax({url: 'getItems', dataType: 'json', success(items){
+					//生成列表、显示...
+				}, error(err){
+					alert('错了');
+				}});
 		  	}
 		}, error(err){
 		  	alert('错了');
@@ -124,9 +124,9 @@
 		  	let userData=yield $.ajax({url: 'getUserData', dataType: 'json'});
 		
 		  	if(userData.type=='VIP'){
-		    	let items=yield $.ajax({url: 'getVIPItems', dataType: 'json'});
+		  		let items=yield $.ajax({url: 'getVIPItems', dataType: 'json'});
 		  	}else{
-		    	let items=yield $.ajax({url: 'getItems', dataType: 'json'});
+		  		let items=yield $.ajax({url: 'getItems', dataType: 'json'});
 		  	}
 		
 		  	//生成、显示...
