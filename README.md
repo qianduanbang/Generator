@@ -14,14 +14,14 @@
 					dataType: 'json',
 					success(data2){
 						$.ajax({
-				  			url: xxx,
-				      		dataType: 'json',
-				      		success(data3){
-				      			//完事儿
-				      		},
-				      		error(){
-				      			alert('错了');
-				      		}
+							url: xxx,
+							dataType: 'json',
+							success(data3){
+								//完事儿
+							},
+							error(){
+								alert('错了');
+							}
 						});
 					},
 					error(){
@@ -53,11 +53,11 @@
 
 ```
 		runner(function *(){
-		  let data1=yield $.ajax({url: xxx, dataType: 'json'});
-		  let data2=yield $.ajax({url: xxx, dataType: 'json'});
-		  let data3=yield $.ajax({url: xxx, dataType: 'json'});
+		  	let data1=yield $.ajax({url: xxx, dataType: 'json'});
+		  	let data2=yield $.ajax({url: xxx, dataType: 'json'});
+		  	let data3=yield $.ajax({url: xxx, dataType: 'json'});
 		
-		  //完事儿
+		  	//完事儿
 		});
 ```
 
